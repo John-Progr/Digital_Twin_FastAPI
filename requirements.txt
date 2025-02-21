@@ -1,0 +1,9 @@
+fastapi>=0.104.1,<1.0.0
+numpy>=1.24.3,<2.0.0
+pydantic-settings>=2.1.0,<3.0.0
+uvicorn>=0.15.0,<1.0.0
+influxdb-client>=1.25.0,<2.0.0  # Add InfluxDB client for working with InfluxDB
+httpx>=0.23.0,<1.0.0
+loguru  # Add loguru for logging
+scikit-learn==1.5.2
+pandas>=1.5.0,<2.0.0  # Add pandas for data manipulation
