@@ -49,8 +49,6 @@ async def data_shift_analysis():
     """
     try:
         results = run_full_workflow_react()
-        print("FINISHED")
-        print(results)
-        return results  # Ensure your function returns JSON-serializable results
+        return results  
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
