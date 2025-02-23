@@ -12,7 +12,7 @@ RUN apt-get update \
 # Upgrade pip to the latest version
 RUN pip install --upgrade pip
 
-# Copy the requirements file first to leverage Docker cache
+# Copy the requirements file 
 COPY requirements.txt .
 
 # Install Python dependencies listed in requirements.txt
@@ -21,7 +21,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the InfluxDB-related code into the container
 COPY influx /app/influx
 
-# Copy the secrets directory to the container (ensure secrets are properly secured)
+# Copy the secrets directory to the container 
 COPY secrets /app/secrets
 
 # Set Python path
