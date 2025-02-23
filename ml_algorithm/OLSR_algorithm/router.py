@@ -60,15 +60,15 @@ async def select_algorithm(
     response_description="Returns updated threshold values confirmation"
 )
 async def update_thresholds(
-    rcl_threshold: Optional[float] = Body(None, description="New RCL threshold value between 0 and 1"),
-    overhead_threshold: Optional[float] = Body(None, description="New overhead threshold value between 0 and 1")
+    rcl_threshold: Optional[float] = Body(None, description="New RCL threshold value"),
+    overhead_threshold: Optional[float] = Body(None, description="New overhead threshold value")
 ) -> ThresholdUpdateResponse:
     """
     Endpoint to update the RCL and Overhead thresholds.
     
     Args:
-        rcl_threshold (Optional[float]): New value for the RCL threshold (0-1).
-        overhead_threshold (Optional[float]): New value for the overhead threshold (0-1).
+        rcl_threshold (Optional[float]): New value for the RCL threshold .
+        overhead_threshold (Optional[float]): New value for the overhead threshold .
         
     Returns:
         ThresholdUpdateResponse: Confirmation message with updated threshold values.
@@ -164,12 +164,12 @@ async def optimize_parameters(
         logger.info(f"FINISHED algorithm_name: {algorithm_name}")
         logger.info(f"FINISHED settings threshold: {threshold_value}")
         
-       # Call optimization function using find_optimal_parameters
+       
         optimal_params = ml_service.find_optimal_parameters(
             optimization_method = algorithm_name,
-            threshold=threshold_value,  # pass the threshold value
-            avg_d=avg_neighbors,  # pass the average neighbors value
-            std_d=std_neighbors  # pass the standard deviation of neighbors
+            threshold=threshold_value,  
+            avg_d=avg_neighbors,  
+            std_d=std_neighbors  
         )
 
         # Prepare response
