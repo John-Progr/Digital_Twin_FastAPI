@@ -8,10 +8,8 @@ from models.data_analysis import run_full_workflow_react
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
-# List of allowed origins (your React app in this case)
 origins = [
     "http://localhost",  # React app running on this port during development
-    # Add any production URLs here, e.g., "https://my-production-url.com"
 ]
 
 # Add the CORS middleware to the app
