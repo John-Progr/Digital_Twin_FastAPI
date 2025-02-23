@@ -95,7 +95,6 @@ class MLService:
               'error': str(e)
            }
         """
-        threshold = 40
         for h, t, w in combinations:
 
             features = [h, t, w,avg_neighbors,std_neighbors]
@@ -161,7 +160,6 @@ class MLService:
         min_overhead = float('inf')
         optimal_params = None
         
-        threshold = 30
         for h, t, w, rcl in close_to_target_triplets:
             features = [h, t, w, settings.AVG_NEIGHBORS, settings.STD_NEIGHBORS]
             overhead = self.predict_overhead(features)
