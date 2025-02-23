@@ -51,14 +51,14 @@ services:
 
   fastapi:
     build:
-      context: ./  # Use the root project folder for building FastAPI
-      dockerfile: Dockerfile  # Dockerfile in the root project folder
+      context: ./  
+      dockerfile: Dockerfile  
     ports:
-      - "8000:8000"  # Expose FastAPI on port 8000
+      - "8000:8000" 
     volumes:
-      - ./:/app  # Mount the entire root project folder into the container
+      - ./:/app  
     env_file:
-      - .env  # Environment variables
+      - .env  
     depends_on:
       - ditto
       - ml_algorithm
